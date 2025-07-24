@@ -1,6 +1,8 @@
 # Advance View
 A race view tool for Mario Kart: Super Circuit
 
+[Download](github.com/aplerdal/AdvanceView/releases/latest)
+
 ## Usage
 Currently, the only officially supported emulator is the most recent release of Mesen2 (though the program likely works with older versions as well).
 
