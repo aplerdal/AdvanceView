@@ -1,6 +1,6 @@
 ﻿-------------------------------------
---  Advance View Mesen Serverside  --
---         By Antimattur           --
+-- Advance View Bizhawk Serversid --
+--         By iMathII              --
 -------------------------------------
 
 ---------------------------------------------------
@@ -22,16 +22,14 @@ addr.driverCount     = addr.raceState + 0x7F0
 addr.drivers         = addr.raceState + 0x7F4
 addr.playerDriver    = addr.raceState + 0x814
 
------------------------------------------------
--- Emulator-Dependent Functions (Mesen ver.) --
------------------------------------------------
+-------------------------------------------------
+-- Emulator-Dependent Functions (Bizhawk ver.) --
+-------------------------------------------------
 
 local function ReadU32(addr)
-    --return emu.read32(addr, emu.memType.gbaDebug, false)
     return memory.read_u32_le(addr)
 end
 local function ReadU8(addr)
-    --return emu.read(addr, emu.memType.gbaDebug, false)
     return memory.read_u8(addr)
 end
 local function Log(str)
@@ -43,9 +41,6 @@ local Main
 local Close
 local SendTrackLoaded
 local function SetupCallbacks()
-	--emu.addEventCallback(Main, emu.eventType.endFrame)
-	--emu.addMemoryCallback(SendTrackLoaded, emu.callbackType.exec, addr.trackLoadFn)
-	--emu.addEventCallback(Close, emu.eventType.scriptEnded)
     event.onframeend(Main)
 	event.on_bus_exec(SendTrackLoaded, addr.trackLoadFn)
 	event.onexit(Close)
